@@ -2,6 +2,7 @@ package org.quickfixj.murano.bootstrap;
 
 import com.google.common.collect.Lists;
 import org.quickfixj.murano.fix.FixEngine;
+import org.quickfixj.murano.fix.FixEngineImpl;
 import org.quickfixj.murano.fix.FixEngineManager;
 import org.quickfixj.murano.fix.FixEngineManagerImpl;
 import org.quickfixj.murano.liquidity.provider.LPConfig;
@@ -13,12 +14,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import quickfix.Application;
 import quickfix.CachedFileStoreFactory;
+import quickfix.ConfigError;
 import quickfix.DefaultMessageFactory;
 import quickfix.FileLogFactory;
+import quickfix.LogFactory;
 import quickfix.MessageFactory;
 import quickfix.MessageStoreFactory;
 import quickfix.SessionSettings;
+import quickfix.ThreadedSocketAcceptor;
 
 import java.util.List;
 
@@ -57,8 +62,8 @@ public class MuranoAppConfig {
 
 	@Bean
 	@DependsOn(value = {"fixMessageStoreFactory", "sessionSettings"})
-	public List<FixEngine> fixEngines(MessageStoreFactory messageStoreFactory, SessionSettings sessionSettings) {
-		return Lists.newArrayList();
+	public FixEngine fixEngines(MessageStoreFactory messageStoreFactory, SessionSettings sessionSettings, LogFactory logFactory, Application application, MessageFactory messageFactory) throws ConfigError {
+		return new FixEngineImpl();
 	}
 
 	@Bean
