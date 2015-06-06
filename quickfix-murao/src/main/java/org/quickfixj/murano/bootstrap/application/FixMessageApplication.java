@@ -11,7 +11,7 @@ import quickfix.RejectLogon;
 import quickfix.SessionID;
 import quickfix.UnsupportedMessageType;
 
-public class FixMessageHandler extends MessageCracker implements Application {
+public class FixMessageApplication extends MessageCracker implements Application {
 
 
 	@Override
