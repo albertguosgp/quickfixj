@@ -35,7 +35,8 @@
 		<module>quickfixj-examples</module>
 		<module>quickfixj-all</module>
 		<module>quickfixj-distribution</module>
-	</modules>
+        <module>quickfix-murao</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
