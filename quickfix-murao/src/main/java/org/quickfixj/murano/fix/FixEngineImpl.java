@@ -28,6 +28,7 @@ public class FixEngineImpl implements FixEngine {
 	@PostConstruct
 	public void init() throws ConfigError {
 		acceptor = new ThreadedSocketAcceptor(application, messageStoreFactory, sessionSettings, logFactory, messageFactory);
+		acceptor.start();
 	}
 
 	@PreDestroy
