@@ -1,6 +1,7 @@
 package org.quickfixj.murano.bootstrap;
 
 import com.google.common.collect.Lists;
+import org.quickfixj.murano.bootstrap.application.FixMessageApplication;
 import org.quickfixj.murano.fix.FixEngine;
 import org.quickfixj.murano.fix.FixEngineImpl;
 import org.quickfixj.murano.fix.FixEngineManager;
@@ -74,6 +75,11 @@ public class MuranoAppConfig {
 	@Bean
 	public quickfix.LogFactory logFactory(SessionSettings sessionSettings) {
 		return new FileLogFactory(sessionSettings);
+	}
+
+	@Bean
+	public Application fixMessageApplication() {
+		return new FixMessageApplication();
 	}
 
 }
