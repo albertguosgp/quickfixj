@@ -22,6 +22,7 @@
 	public class Version {
 public static void main(String[] args) {
         System.out.println(getVersion());
+System.out.print("hello world");
     }
 
     public static String getVersion() {
