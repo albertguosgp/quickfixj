@@ -1,4 +1,4 @@
-/*******************************************************************************
+/******************************************************************************
  * Copyright (c) quickfixengine.org  All rights reserved.
  *
  * This file is part of the QuickFIX FIX Engine
@@ -17,7 +17,7 @@
  * are not clear to you.
  ******************************************************************************/
 
-package org.quickfixj;
+	package org.quickfixj;
 
 	public class Version {
 public static void main(String[] args) {
